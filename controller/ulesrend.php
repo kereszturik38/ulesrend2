@@ -28,4 +28,6 @@ if(!empty($_SESSION["id"])) $en = $_SESSION["id"];
 
 $tanar = 17;
 
+$ID_lista = $tanulo->tanulokListaja($conn);
+
 include 'view/ulesrend.php';
