@@ -1,7 +1,6 @@
 <?php
 
-require '../includes/db.inc.php';
-require 'Kijeloltfelhasznalok.php';
+require 'includes/db.inc.php';
 
 class Hianyzo extends Kijeloltfelhasznalok {
     
@@ -11,10 +10,11 @@ class Hianyzo extends Kijeloltfelhasznalok {
 }
 
 // Teszt
+/*
 $hianyzo = new Hianyzo();
 
 $hianyzo->set_id(1, $conn);
 echo $hianyzo->get_id();
-
+*/
 
 ?>

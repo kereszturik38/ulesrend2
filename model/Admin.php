@@ -1,7 +1,6 @@
 <?php
 
-require '../includes/db.inc.php';
-require 'Kijeloltfelhasznalok.php';
+require 'includes/db.inc.php';
 
 class Admin extends Kijeloltfelhasznalok {
     
@@ -11,10 +10,11 @@ class Admin extends Kijeloltfelhasznalok {
 }
 
 // Teszt
+/*
 $admin = new Admin();
 
 $admin->set_id(1, $conn);
 echo $admin->get_id();
-
+*/
 
 ?>
