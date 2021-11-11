@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/db.inc.php';
+require_once 'model/KijeloltFelhasznalok.php';
 
 class Hianyzo extends Kijeloltfelhasznalok {
     

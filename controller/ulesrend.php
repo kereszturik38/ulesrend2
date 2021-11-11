@@ -1,6 +1,5 @@
 <?php
 // form feldolgozása
-require 'model/KijeloltFelhasznalok.php';
 require 'model/Admin.php';
 require 'model/Hianyzo.php';
 

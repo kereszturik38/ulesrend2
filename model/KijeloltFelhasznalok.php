@@ -1,4 +1,6 @@
 <?php
+require 'includes/db.inc.php';
+
 class Kijeloltfelhasznalok {
  private $id;
  protected $tablaNev;
