@@ -29,7 +29,7 @@ if($_FILES["filesToUpload"]["size"][$i] > 100000){
   }
 
   if(sizeof($errors) == 0){
-    if (move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$i], $target_file)) {
+    if (@move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$i], $target_file)) {
     } else {
       array_push($errors,"A file feltöltése nem sikeres");
     }
@@ -47,6 +47,7 @@ if($_FILES["filesToUpload"]["size"][$i] > 100000){
 </form>
 
 <?php
+if(isset($_POST["submit"])){
 echo "A(z)" . $countfiles . " file feltöltése:";
 if(sizeof($errors) > 0){
   echo "Sikertelen<br>";
@@ -56,5 +57,7 @@ if(sizeof($errors) > 0){
 }else{
   echo "Sikeres";
   unset($errors);
+}
+
 }
 ?>
