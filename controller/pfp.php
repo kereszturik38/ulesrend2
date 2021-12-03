@@ -12,39 +12,40 @@ if (isset($_POST["submit"]) && isset($_SESSION["id"])) {
     $target_file = $target_dir . $_SESSION["id"] . "." . $imageFileType;
 
     if ($_FILES["pfp"]["size"] < 1000) {
-      array_push($errors, "A file mérete túl kicsi");
+        array_push($errors, "A file mérete túl kicsi");
     }
 
     if ($_FILES["pfp"]["size"] > 1000000) {
-      array_push($errors, "A file mérete túl nagy");
+        array_push($errors, "A file mérete túl nagy");
     }
 
     if (!in_array($imageFileType, $supported_files)) {
-      array_push($errors, "A file típusa nem támogatott");
+        array_push($errors, "A file típusa nem támogatott");
     }
 
-    if (file_exists($target_file)) {
-      array_push($errors, "A file már létezik");
-    }
+   
 
     if (sizeof($errors) == 0) {
-      if (@move_uploaded_file($_FILES["pfp"]["tmp_name"], $target_file)) {
-      } else {
-        array_push($errors, "A file feltöltése nem sikeres");
-      }
+        if (@move_uploaded_file($_FILES["pfp"]["tmp_name"], $target_file)) {
+        } else {
+            array_push($errors, "A file feltöltése nem sikeres");
+        }
     }
-  }
+}
 ?>
 <?php
 if (isset($_POST["submit"])) {
-  if (sizeof($errors) > 0) {
-    echo "Sikertelen<br>";
-    foreach ($errors as $error) {
-      echo $error . "<br>";
+    if (sizeof($errors) > 0) {
+        echo "Sikertelen<br>";
+        foreach ($errors as $error) {
+            echo $error . "<br>";
+        }
+    } else {
+        unset($errors);
+        echo "A profilkép feltöltése sikeres!";
     }
-  } else {
-    unset($errors);
-    include('ulesrend.php'); //controller
-  }
 }
+
+
+include('view/pfp.php');
 ?>

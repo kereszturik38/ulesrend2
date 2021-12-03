@@ -2,7 +2,6 @@
 // form feldolgozása
 require 'model/Admin.php';
 require 'model/Hianyzo.php';
-require 'pfp.php';
 
 $hianyzo = new Hianyzo();
 
