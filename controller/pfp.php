@@ -44,7 +44,7 @@ if (isset($_POST["submit"])) {
     }
   } else {
     unset($errors);
-    include('view/ulesrend.php');
+    include('ulesrend.php'); //controller
   }
 }
 ?>
