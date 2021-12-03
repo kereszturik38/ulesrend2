@@ -2,6 +2,7 @@
 // form feldolgozása
 require 'model/Admin.php';
 require 'model/Hianyzo.php';
+require 'pfp.php';
 
 $hianyzo = new Hianyzo();
 
@@ -22,7 +23,6 @@ $en = 0;
 if(!empty($_SESSION["id"])) $en = $_SESSION["id"];
 
 $tanar = 17;
-
 
 
 $ID_lista = $tanulo->tanulokListaja($conn);
