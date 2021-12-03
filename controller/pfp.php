@@ -26,6 +26,7 @@ if (isset($_POST["submit"]) && isset($_SESSION["id"])) {
    
 
     if (sizeof($errors) == 0) {
+        array_map("unlink",glob("profilkepek/{$_SESSION["id"]}.*"));
         if (@move_uploaded_file($_FILES["pfp"]["tmp_name"], $target_file)) {
         } else {
             array_push($errors, "A file feltöltése nem sikeres");

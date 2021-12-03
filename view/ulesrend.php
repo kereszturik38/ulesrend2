@@ -54,10 +54,10 @@
 				if (in_array($id, $hianyzok)) $plusz .=  ' class="missing"';
 				if ($id == $en) $plusz .=  ' id="me"';
 				if ($id == $tanar) $plusz .=  ' colspan="2"';
-				$pfpres = glob("profilkepek/" . $id . ".{png,jpg,jpeg}",GLOB_BRACE);
-				if(!empty($pfpres) && $pfpres != false){
-					$pfpstr = $pfpres[0];
-					$plusz .= ' style="background-image: url('. $pfpstr .') ;background-size:contain;background-repeat:no-repeat"';
+				$pfpres = glob("profilkepek/" . $id . ".{png,jpg,jpeg}", GLOB_BRACE);
+				if (!empty($pfpres) && $pfpres != false) {
+					$pfpstr = end($pfpres);
+					$plusz .= ' style="background-image: url(' . $pfpstr . ') ;background-size:contain;background-repeat:no-repeat"';
 				}
 				echo "<td" . $plusz . ">" . $tanulo->get_nev();
 				if (!empty($_SESSION["id"])) {
