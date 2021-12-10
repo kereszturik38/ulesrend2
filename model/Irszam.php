@@ -49,6 +49,19 @@ class Irszam{
         }
         return $lista;
     }
+
+public function telepulesekListaja_rendezett($conn) {
+        $lista = array();
+        $sql = "SELECT id,telepules FROM telepulesek ORDER BY telepules ASC";
+        if($result = $conn->query($sql)) {
+            if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+                    $lista[] = $row['id'];
+                }
+            }
+        }
+        return $lista;
+    }
 }
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 include 'model/Irszam.php';
 $telep = new Irszam();
-$t_lista = $telep->telepulesekListaja($conn);
+$t_lista = $telep->telepulesekListaja_rendezett($conn);
 
 if(sizeof($t_lista) > 0){
     include 'view/irszam.php';
