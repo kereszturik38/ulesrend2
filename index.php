@@ -30,7 +30,8 @@ if(isset($_REQUEST['page'])) {
 $menupontok = array(    'index' => "Főoldal", 
                         'ulesrend' => "Ülésrend", 
                         'felhasznalo' => $szoveg,
-                        'pfp' => "Profilkép feltöltése"
+                        'pfp' => "Profilkép feltöltése",
+                        'irszam' => "Irányítószámok és helyek"
                 );
 
 $title = $menupontok[$page];
